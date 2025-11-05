@@ -28,3 +28,6 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
+/*key=AIzaSyCWoW7dDmvBMpqbrZjUJrubbDNh068v7Zg
+Mongo=mongodb+srv://admin:admin@cluster0.zq8uvts.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+*/

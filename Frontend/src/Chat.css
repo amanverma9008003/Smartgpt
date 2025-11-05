@@ -1,0 +1,56 @@
+.chatContainer{
+    flex: 1; /* allow chat area to grow inside the chat-window flex layout */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+
+.chats{
+    flex: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-sizing: border-box;
+}
+
+/* messages */
+.userDiv{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.gptDiv{
+    display:flex;
+    justify-content: flex-start;
+}
+
+.userMsg{
+    background-color: rgb(51, 48, 48);
+    padding: 10px 20px;
+    border-radius: 14px;
+    max-width: 70%;
+    margin-left: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.gptMsg{
+    background-color: rgb(34, 34, 34);
+    padding: 10px 20px;
+    border-radius: 14px;
+    max-width: 70%;
+    margin-right: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.startHint{
+    color: #ddd;
+    text-align: center;
+    margin: 1rem 0;
+}

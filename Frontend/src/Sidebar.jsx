@@ -11,7 +11,7 @@ function Sidebar() {
     useEffect(()=>{
         const getallThreads = async () => {
             try{
-                const response = await fetch("http://localhost:5000/api/threads");
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/threads`);
                 const data = await response.json();
                //console.log("raw response:", data);
                 const filteredData = data.map(thread => ({

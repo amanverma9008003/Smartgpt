@@ -49,7 +49,7 @@ function Sidebar() {
         //console.log("check1",threadId,typeof threadId);
         try{
             //console.log("check2");
-            const response = await fetch(`http://localhost:5000/api/thread/${threadId}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/thread/${threadId}`);
             //console.log("check3");
             const data = await response.json();
             //console.log("fetched thread messages:",data);
@@ -60,7 +60,7 @@ function Sidebar() {
     };
     const deleteThread= async(threadId)=>{
         try{
-            const response = await fetch(`http://localhost:5000/api/thread/${threadId}`,{
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/thread/${threadId}`,{
                 method:"DELETE"
             });
             if(response.ok){

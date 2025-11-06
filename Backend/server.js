@@ -6,7 +6,12 @@ import router from "./routes/chat.js";
 
 const app = express();
 const PORT=5000;
-
+app.use(cors({
+    origin: 'http://localhost:5173', // Allow requests from your frontend
+    methods: ['GET', 'POST', 'DELETE', 'PUT'], // Specify allowed methods
+    credentials: true // Allow credentials if needed
+}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/api",router);
 

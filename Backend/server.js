@@ -3,7 +3,10 @@ import mongoose from "mongoose";
 import cors from "cors";
 import 'dotenv/config';
 import router from "./routes/chat.js";
+
 const app = express();
+const PORT=5000;
+
 app.use(express.json());
 app.use(cors());
 app.use("/api",router);
@@ -17,7 +20,6 @@ const connectDB=async ()=>{
     }
 }
 
-const PORT=5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
     connectDB();

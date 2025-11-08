@@ -6,6 +6,9 @@ import router from "./routes/chat.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+app.use("/api",router);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(cors({
     origin: [
@@ -15,9 +18,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'DELETE', 'PUT'], // Specify allowed methods
     credentials: true // Allow credentials if needed
 }));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use("/api",router);
+
 
 const connectDB=async ()=>{
     try{

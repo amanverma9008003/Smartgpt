@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
     origin: [
       "http://localhost:5000",         // local frontend
-      "https://smartgpt-miax.onrender.com"   // deployed frontend
+      "https://smartgpt-backend.onrender.com"   // deployed frontend https://smartgpt-backend.onrender.com
     ], // Allow requests from your frontend
     methods: ['GET', 'POST', 'DELETE', 'PUT'], // Specify allowed methods
     credentials: true // Allow credentials if needed

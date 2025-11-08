@@ -20,7 +20,8 @@ function Sidebar() {
                 }));
                 setAllThreads(filteredData);
                 console.log("filtered threads:", filteredData);
-            }catch(err){
+            }
+            catch(err){
                 console.log("error fetching threads:",err);
             }
         };

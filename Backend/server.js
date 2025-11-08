@@ -5,9 +5,13 @@ import 'dotenv/config';
 import router from "./routes/chat.js";
 
 const app = express();
-const PORT=5000;
+const PORT = process.env.PORT || 5000;
+
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow requests from your frontend
+    origin: [
+      "http://localhost:5000",         // local frontend
+      "https://smartgpt-miax.onrender.com"   // deployed frontend
+    ], // Allow requests from your frontend
     methods: ['GET', 'POST', 'DELETE', 'PUT'], // Specify allowed methods
     credentials: true // Allow credentials if needed
 }));

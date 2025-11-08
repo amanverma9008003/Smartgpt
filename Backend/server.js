@@ -9,10 +9,11 @@ const PORT = process.env.PORT || 5000;
 
 // ✅ Enable CORS BEFORE routes
 app.use(
-  cors({
+    cors({
     origin: [
-      "http://localhost:5173",          // local frontend (Vite)
-      "https://smartact.netlify.app"    // deployed frontend
+        "http://localhost:5174",
+        "http://localhost:5000",          // local frontend (Vite)
+        "https://smartgpt-miax.onrender.com"    // deployed frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,

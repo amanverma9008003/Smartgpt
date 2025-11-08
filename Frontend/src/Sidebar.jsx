@@ -7,11 +7,11 @@ import React from "react";
 
 function Sidebar() {
     const {allThreads,setAllThreads,currThreadId,setNewChat,setPrompt,setReply,setCurrentThreadId,setPrevChats}=useContext(MyContext);
-    
+    const API_URL ="https://smartgpt-miax.onrender.com";//`${API_URL}/api/threads`
     useEffect(()=>{
         const getallThreads = async () => {
             try{
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/threads`);
+                const response = await fetch('http://localhost:5000/api/threads');
                 const data = await response.json();
                //console.log("raw response:", data);
                 const filteredData = data.map(thread => ({
@@ -50,7 +50,7 @@ function Sidebar() {
         //console.log("check1",threadId,typeof threadId);
         try{
             //console.log("check2");
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/thread/${threadId}`);
+            const response = await fetch(`http://localhost:5000/api/thread/${threadId}`);
             //console.log("check3");
             const data = await response.json();
             //console.log("fetched thread messages:",data);
@@ -61,9 +61,9 @@ function Sidebar() {
     };
     const deleteThread= async(threadId)=>{
         try{
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/thread/${threadId}`,{
+            const response =await fetch(`http://localhost:5000/api/thread/${threadId}`,{
                 method:"DELETE"
-            });
+            }) ;
             if(response.ok){
                 console.log("Thread deleted successfully");
                 setAllThreads(prevThreads=>prevThreads.filter(thread=>thread.ThreadId!==threadId));

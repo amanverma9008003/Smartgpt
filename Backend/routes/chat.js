@@ -4,22 +4,6 @@ import runchat from '../utils/openai.js';
 
 const router = express.Router();
 
-/*router.post("/test",async(req,res)=>{
-    try{
-        const thread=new Thread({
-            threadId:"xyz",
-            title:"Testing new thread"
-        });
-
-        const response=await thread.save();
-        res.send(response);
-    }
-    catch(err){
-        console.log(err);
-        res.status(500).send("Error in creating thread");
-    }
-})*/
-
 router.get("/threads",async(req,res)=>{
     try{
         const threads=await Thread.find().sort({updatedAt:-1});

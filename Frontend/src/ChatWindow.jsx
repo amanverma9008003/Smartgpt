@@ -6,7 +6,7 @@ import { SyncLoader } from "react-spinners";
 import {SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 function ChatWindow() {
-    
+    const API_URL ="https://smartgpt-miax.onrender.com";//`${API_URL}/api/threads`
     const { prompt, setPrompt, setReply, currentThreadId, setNewChat, setPrevChats } = useContext(MyContext);
     const [loading, setLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -62,7 +62,7 @@ function ChatWindow() {
         };
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, options);
+            const response = await fetch(`http://localhost:5000/api/chat`, options);
             const data = await response.json();
             /* console.log("raw response:", data); */
 

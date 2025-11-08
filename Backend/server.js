@@ -13,7 +13,7 @@ app.use(
     origin: [
         "http://localhost:5174",
         "http://localhost:5000",          // local frontend (Vite)
-        "https://smartgpt-miax.onrender.com"    // deployed frontend
+        "https://smartact.netlify.app"    // deployed frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,

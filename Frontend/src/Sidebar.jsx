@@ -2,7 +2,7 @@ import "./Sidebar.css";
 import {useContext, useEffect} from "react";
 import {MyContext} from "./MyContext.jsx";
 import {v1 as uuid} from "uuid";
-
+import { blacklogo } from "./assets/assets.js";
 import React from "react";
 
 function Sidebar() {
@@ -82,7 +82,7 @@ function Sidebar() {
     <section className="sidebar">
 
     <button onClick={createNewChat}>
-        <img src="src/assets/blacklogo.png" alt="gpt logo" className="logo"></img>
+        <img src={blacklogo} alt="gpt logo" className="logo"></img>
         <span><i className="fa-solid fa-pen"></i></span>
     </button>
 
